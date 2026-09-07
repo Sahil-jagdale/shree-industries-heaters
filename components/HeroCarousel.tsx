@@ -35,7 +35,7 @@ export default function HeroCarousel() {
             alt="Industrial heaters background"
             fill
             priority={index === 0}
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
             className="hero-carousel-image"
           />
         </div>

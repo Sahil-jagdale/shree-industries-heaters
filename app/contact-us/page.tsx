@@ -29,8 +29,11 @@ export default function ContactUs() {
                   </div>
                   <div className="contact-text">
                     <h3>Our Address</h3>
-                    <p>SR NO 8/6, NEAR FIRE BRIGADE STATION, SHANTINAGAR INDUSTRIAL ESTATE, LANDEWADI, BHOSARI</p>
-                    <p>PUNE - 411 039, MAHARASHTRA, INDIA</p>
+                    <p>Plot No. E-34, WTC Trade Center,
+                      SP Waluj Road, Ranjangaon Shenapunji, Waluj MIDC,
+                      Chhatrapati Sambhaji Nagar, Maharashtra 431136, India
+                    </p>
+
                   </div>
                 </div>
 
