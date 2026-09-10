@@ -57,6 +57,11 @@ const products: Product[] = [
     href: "furnace-heating-elements",
   },
   {
+    name: "Porcelain Heater",
+    image: "porcelain-heater.png",
+    href: "porcelain-heater",
+  },
+  {
     name: "Other Products",
     image: "other_products.png",
     href: "other-products",
@@ -80,6 +85,50 @@ const applications: Application[] = [
   ["Plastic Moulding Machine", "platic-moulding-machine.png"],
   ["Industrial Furnace", "Industrial_Furnace.jpg"],
 ].map(([name, image]) => ({ name, image }));
+
+type Vendor = {
+  name: string;
+  logo: string;
+};
+
+const vendors: Vendor[] = [
+  {
+    name: "Tata Power",
+    logo: "/images/vendors/tata_power.svg",
+  },
+  {
+    name: "L&T Electrical & Automation",
+    logo: "/images/vendors/lt_electricals.svg",
+  },
+  {
+    name: "Greaves Cotton",
+    logo: "/images/vendors/greaves_cotton.svg",
+  },
+  {
+    name: "Paras Group of Industries",
+    logo: "/images/vendors/paras_group.png",
+  },
+  {
+    name: "Forbes Marshall",
+    logo: "/images/vendors/forbes_marshall.png",
+  },
+  {
+    name: "Siemens",
+    logo: "/images/vendors/siemens.svg",
+  },
+  {
+    name: "BKT Tires",
+    logo: "/images/vendors/bkt_tires.svg",
+  },
+  {
+    name: "Herman Pharma",
+    logo: "/images/vendors/herman_pharma.png",
+  },
+  {
+    name: "Sun Pharma",
+    logo: "/images/vendors/sun_pharma.svg",
+  },
+];
 
 const nav = [
   "Home",
@@ -216,34 +265,55 @@ export default function Home() {
             .marquee-container {
               display: flex;
               width: max-content;
-              animation: scrollMarquee 25s linear infinite;
+              animation: scrollMarquee 35s linear infinite;
             }
             .marquee-container:hover {
               animation-play-state: paused;
             }
             .vendor-card {
               display: flex;
+              flex-direction: column;
               align-items: center;
               justify-content: center;
-              width: 200px;
-              height: 100px;
-              margin: 0 20px;
-              background-color: #f8fafc;
-              border: 1px solid #e5e9ed;
-              border-radius: 8px;
-              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-              font-weight: 600;
-              color: #5e6874;
-              font-size: 18px;
-              transition: transform 0.3s ease, box-shadow 0.3s ease;
+              width: 220px;
+              height: 125px;
+              margin: 0 16px;
+              background-color: #ffffff;
+              border: 1px solid #e2e8f0;
+              border-radius: 12px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+              transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
               text-align: center;
-              padding: 10px;
+              padding: 12px 16px;
+              flex-shrink: 0;
             }
             .vendor-card:hover {
               transform: translateY(-5px);
-              box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-              color: #02549c;
-              border-color: #c5e2fd;
+              box-shadow: 0 10px 20px rgba(2, 84, 156, 0.12);
+              border-color: #93c5fd;
+            }
+            .vendor-logo-box {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 54px;
+              width: 100%;
+              margin-bottom: 8px;
+            }
+            .vendor-logo-img {
+              max-height: 48px;
+              max-width: 155px;
+              width: auto;
+              height: auto;
+              object-fit: contain;
+            }
+            .vendor-name {
+              font-family: Montserrat, sans-serif;
+              font-weight: 600;
+              color: #334155;
+              font-size: 13px;
+              line-height: 1.25;
+              margin: 0;
             }
             @keyframes scrollMarquee {
               0% { transform: translateX(0); }
@@ -253,33 +323,33 @@ export default function Home() {
           <div className="marquee-wrapper">
             <div className="marquee-container">
               {/* First set */}
-              {[
-                "SteelTech Industries",
-                "Alloy Masters",
-                "Global Heating Co.",
-                "Thermal Dynamics",
-                "Precision Metals",
-                "Indo Elements",
-                "Supreme Ceramics",
-                "Advanced Insulation",
-              ].map((vendor, index) => (
+              {vendors.map((vendor, index) => (
                 <div className="vendor-card" key={`vendor-1-${index}`}>
-                  {vendor}
+                  <div className="vendor-logo-box">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={vendor.logo}
+                      alt={vendor.name}
+                      className="vendor-logo-img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="vendor-name">{vendor.name}</span>
                 </div>
               ))}
               {/* Duplicate set for infinite scroll */}
-              {[
-                "SteelTech Industries",
-                "Alloy Masters",
-                "Global Heating Co.",
-                "Thermal Dynamics",
-                "Precision Metals",
-                "Indo Elements",
-                "Supreme Ceramics",
-                "Advanced Insulation",
-              ].map((vendor, index) => (
+              {vendors.map((vendor, index) => (
                 <div className="vendor-card" key={`vendor-2-${index}`}>
-                  {vendor}
+                  <div className="vendor-logo-box">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={vendor.logo}
+                      alt={vendor.name}
+                      className="vendor-logo-img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="vendor-name">{vendor.name}</span>
                 </div>
               ))}
             </div>

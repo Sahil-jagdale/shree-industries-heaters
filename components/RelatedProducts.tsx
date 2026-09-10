@@ -22,6 +22,7 @@ const allProducts = [
   { name: "HOT RUNNER HEATER", image: "runner_heater1.png", slug: "hot-runner-heater" },
   { name: "LOAD BANK HEATER", image: "loadBank_heater.png", slug: "loadbank-heater" },
   { name: "FURNACE HEATING ELEMENT", image: "heating-elements.png", slug: "furnace-heating-elements" },
+  { name: "PORCELAIN HEATER", image: "porcelain-heater.png", slug: "porcelain-heater" },
   { name: "OTHER PRODUCTS", image: "other_products.png", slug: "other-products" },
 ];
 

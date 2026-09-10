@@ -86,6 +86,7 @@ export default function ContactUs() {
                   <label htmlFor="subject">Subject</label>
                   <select id="subject" name="Subject" required defaultValue="Heater Related">
                     <option value="Heater Related">Heater Inquiry</option>
+                    <option value="Supply & Services">Supply & Services / AMC Inquiry</option>
                     <option value="Other Supply Related">Other Supply Products</option>
                   </select>
                 </div>

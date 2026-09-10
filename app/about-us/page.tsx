@@ -46,76 +46,118 @@ export default function AboutUs() {
       </section>
 
       <section className="about-content-section">
-        <div
-          className="container about-content-grid about-us-grid"
-          style={{
-            alignItems: "center",
-          }}
-        >
-          <div
-            className="about-cards-list"
-            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
-          >
-            <div className="about-card">
-              <h3>Our Infrastructure</h3>
-              <p>
-                We have a strong infrastructure of machineries, dynamic and
-                skilled technicians and a young management team that ensures
-                high quality heaters to our esteemed clients.
-              </p>
-            </div>
-            <div className="about-card" style={{ marginLeft: "40px" }}>
-              <h3>Manufacturing Facilities</h3>
-              <p>
-                Shree Industries has an in-house manufacturing facility equipped
-                with advanced machinery & equipments. We have a separate
-                facility for testing our Heaters. We also have extensive R&D
-                unit.
-              </p>
-            </div>
-            <div className="about-card">
-              <h3>Our Team</h3>
-              <p>
-                We boast of our expert team of engineers and technicians, who
-                possesses high level of skills & knowledge about the domain. Our
-                team is capable of executing and completing all the orders in a
-                systematic, scheduled & strategic manner with intentions of
-                maintaining utmost flawlessness in the process.
-              </p>
-            </div>
-            <div className="about-card" style={{ marginLeft: "40px" }}>
-              <h3>Our Vision</h3>
-              <p>
-                We endeavor to provide best value industrial heaters and heating
-                solutions that place the highest priority on our customer. Our
-                mission is to provide comprehensive and high-end cost effective
-                industrial heaters to our esteemed customers with highest
-                quality levels in order to serve as a solution-focused partner
-                to achieve customer delight.
-              </p>
-            </div>
-            <div className="about-card">
-              <h3>Our Mission</h3>
-              <p>
-                Shree Industries is led by experienced and dynamic management
-                having vast experience of around 3 decades. Our Vision is to be
-                one of the most leading Industrial Heaters manufacturing
-                companies in India in compatibility with our technology and
-                products.
-              </p>
-            </div>
+        <div className="container">
+          <div className="about-section-header">
+            <span className="about-section-badge">
+              <i className="fa-solid fa-award"></i> WHY CHOOSE SHREE INDUSTRIES
+            </span>
+            <h2>OUR CORE PILLARS &amp; INFRASTRUCTURE</h2>
+            <div className="header-line"></div>
+            <p className="about-section-lead">
+              A relentless commitment to engineering precision, advanced in-house manufacturing, and over 3 decades of domain expertise.
+            </p>
           </div>
-          <div
-            className="about-side-image"
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <Image
-              src="/images/about_collage.png"
-              alt="About Us Collage"
-              width={600}
-              height={600}
-              style={{ objectFit: "contain" }}
-            />
+
+          <div className="about-pillars-grid">
+            {/* Infrastructure */}
+            <div className="pillar-card">
+              <div className="pillar-icon-box">
+                <i className="fa-solid fa-industry"></i>
+              </div>
+              <div className="pillar-content">
+                <h3>Our Infrastructure</h3>
+                <p>
+                  We have built a strong, modern infrastructure housing heavy-duty machineries, precision winding systems, and dynamic technicians ensuring high-capacity output.
+                </p>
+                <div className="pillar-tag">
+                  <i className="fa-solid fa-check"></i> High-Capacity Machinery
+                </div>
+              </div>
+            </div>
+
+            {/* Manufacturing Facilities */}
+            <div className="pillar-card">
+              <div className="pillar-icon-box">
+                <i className="fa-solid fa-gears"></i>
+              </div>
+              <div className="pillar-content">
+                <h3>Manufacturing Facilities</h3>
+                <p>
+                  Shree Industries boasts an in-house manufacturing facility equipped with advanced machinery &amp; equipment, dedicated testing chambers, and an extensive R&amp;D unit.
+                </p>
+                <div className="pillar-tag">
+                  <i className="fa-solid fa-check"></i> In-House R&amp;D &amp; Testing
+                </div>
+              </div>
+            </div>
+
+            {/* Our Team */}
+            <div className="pillar-card">
+              <div className="pillar-icon-box">
+                <i className="fa-solid fa-users-gear"></i>
+              </div>
+              <div className="pillar-content">
+                <h3>Our Team</h3>
+                <p>
+                  Our expert team of thermal engineers and skilled technicians possesses deep domain expertise, executing orders with scheduled precision and zero defects.
+                </p>
+                <div className="pillar-tag">
+                  <i className="fa-solid fa-check"></i> Certified Specialists
+                </div>
+              </div>
+            </div>
+
+            {/* Our Vision */}
+            <div className="pillar-card">
+              <div className="pillar-icon-box">
+                <i className="fa-solid fa-eye"></i>
+              </div>
+              <div className="pillar-content">
+                <h3>Our Vision</h3>
+                <p>
+                  To be India&apos;s most trusted, innovative, and technologically advanced industrial heating partner, recognized for superior thermal efficiency and customer delight.
+                </p>
+                <div className="pillar-tag">
+                  <i className="fa-solid fa-check"></i> Industry Leadership
+                </div>
+              </div>
+            </div>
+
+            {/* Our Mission */}
+            <div className="pillar-card">
+              <div className="pillar-icon-box">
+                <i className="fa-solid fa-bullseye"></i>
+              </div>
+              <div className="pillar-content">
+                <h3>Our Mission</h3>
+                <p>
+                  To provide comprehensive, cost-effective, and custom-engineered heating elements of uncompromising quality, supported by 3 decades of manufacturing excellence.
+                </p>
+                <div className="pillar-tag">
+                  <i className="fa-solid fa-check"></i> Customer-First Approach
+                </div>
+              </div>
+            </div>
+
+            {/* Showcase Card with Collage */}
+            <div className="pillar-card showcase-card">
+              <div className="showcase-image-wrapper">
+                <Image
+                  src="/images/about_collage.png"
+                  alt="Shree Industries Team & Vision Collage"
+                  width={220}
+                  height={220}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+              <div className="showcase-text">
+                <span className="showcase-badge">ESTABLISHED LEGACY</span>
+                <h4>30+ Years of Excellence</h4>
+                <p>
+                  Powering heavy engineering, chemical, plastic, and furnace industries across India.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

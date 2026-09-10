@@ -41,6 +41,7 @@ const heroProducts = [
     name: "FURNACE HEATING ELEMENT",
     image: "/images/products/heating-elements.png",
   },
+  { name: "PORCELAIN HEATER", image: "/images/products/porcelain-heater.png" },
   { name: "OTHER PRODUCTS", image: "/images/products/other_products.png" },
 ];
 
@@ -390,6 +391,31 @@ export default function Products() {
                   extreme temperatures in industrial furnaces. They are
                   engineered to provide uniform heating and long operational
                   life under demanding continuous operation.
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/products/porcelain-heater"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <div className="product-list-card">
+              <div className="product-card-images">
+                <img
+                  src="/images/products/porcelain-heater.png"
+                  alt="Porcelain Heater"
+                  width="250"
+                  height="250"
+                />
+              </div>
+              <div className="product-card-info">
+                <h3>PORCELAIN HEATER</h3>
+                <p>
+                  Porcelain Heaters (Ceramic Bobbin Heaters) are heavy-duty,
+                  high-efficiency heating elements engineered for indirect and
+                  direct heating of liquids, gases, and viscous materials in
+                  process tanks, boilers, and industrial ovens.
                 </p>
               </div>
             </div>

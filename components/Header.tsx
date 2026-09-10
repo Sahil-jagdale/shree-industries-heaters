@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const nav = ["Home", "About Us", "Products", "Supplied Products", "Contact Us"];
+const nav = ["Home", "About Us", "Products", "Supply & Services", "Contact Us"];
 
 export default function Header() {
   const pathname = usePathname();
@@ -82,14 +82,17 @@ export default function Header() {
                     ? "/about-us"
                     : item === "Products"
                       ? "/products"
-                      : item === "Contact Us"
-                        ? "/contact-us"
-                        : `/#${item.toLowerCase().replaceAll(" ", "-")}`;
+                      : item === "Supply & Services"
+                        ? "/supply-services"
+                        : item === "Contact Us"
+                          ? "/contact-us"
+                          : `/#${item.toLowerCase().replaceAll(" ", "-")}`;
 
               const isActive =
                 (item === "Home" && pathname === "/") ||
                 (item === "About Us" && pathname === "/about-us") ||
                 (item === "Products" && pathname === "/products") ||
+                (item === "Supply & Services" && pathname === "/supply-services") ||
                 (item === "Contact Us" && pathname === "/contact-us");
 
               return (

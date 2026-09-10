@@ -14,9 +14,24 @@ type Product = {
   additionalSpecifications?: string[][];
   tableHeaders?: string[];
   subProducts?: Product[];
+  images?: string[];
 };
 
-export const products: Record<string, Product> = {
+const products: Record<string, Product> = {
+  "porcelain-heater": {
+    name: "Porcelain Heater",
+    image: "porcelain-heater.png",
+    description:
+      "Porcelain Heaters (also known as Ceramic Bobbin Heaters) are heavy-duty, high-performance heating solutions engineered specifically for both direct and indirect heating of liquids, gases, and viscous materials in demanding industrial environments. Constructed from high-refractory, grooved steatite porcelain ceramic segments mounted along a central stainless-steel tie rod, these elements hold premium 80/20 Nichrome (NiCr) or Kanthal A1 resistance wire in open circumferential grooves to maximize radiant and convective heat transfer.\n\nBecause these heaters are commonly installed inside protective thermowells and immersion pocket tubes, element replacement or routine inspection can be carried out cleanly and quickly without draining tanks, vessels, or piping systems, completely eliminating expensive operational downtime.\n\n<strong>Key Features & Numerical Specifications:</strong>\n• <strong>Operating Temperatures:</strong> Capable of sustaining continuous sheath temperatures up to 800°C (1472°F) and core refractory ceramic withstand temperatures reaching up to 1100°C.\n• <strong>Diameter Options:</strong> Standard cylindrical body diameters include 31 mm, 36 mm, 46 mm, and 57 mm, engineered to slide directly into standard 1.5-inch, 2-inch, and 3-inch protection tubes or thermowells.\n• <strong>Available Lengths:</strong> Manufactured in modular heating lengths from 300 mm up to 3000 mm (0.3 m to 3.0 m), featuring customized unheated cold zones ranging from 50 mm to 300 mm to protect terminal connections.\n• <strong>Electrical & Power Ratings:</strong> Available for 230V single-phase and 415V/440V 3-phase circuits, with power capacities scalable from 1.0 kW up to 24.0 kW per element. Watt densities are calibrated between 2.5 W/cm² and 6.0 W/cm² to prevent carbonization and fluid degradation.\n• <strong>Dielectric & Insulation Integrity:</strong> High-grade electrical porcelain provides dielectric breakdown resistance greater than 2000V AC and cold insulation resistance exceeding 20 MΩ at 500V DC.\n\nThese heaters are widely deployed in horizontal and vertical configurations across bitumen tanks, industrial fuel oil preheaters, chemical processing vessels, hot water boilers, and industrial heat-treatment ovens, delivering dependable performance and exceptional thermal efficiency.",
+    features: [
+      "Operating temperatures up to 800°C with 1100°C refractory core rating",
+      "Standard body diameters of 31 mm, 36 mm, 46 mm, and 57 mm",
+      "Heating lengths modularly scalable from 300 mm to 3000 mm",
+      "Power ratings from 1.0 kW to 24.0 kW (230V / 415V / 440V)",
+      "High dielectric insulation strength exceeding 2000V AC",
+      "Replaceable without draining tanks or interrupting production pipelines",
+    ],
+  },
   "roller-heater": {
     name: "Roller Heater",
     image: "roller_heater1.png",
@@ -314,14 +329,29 @@ export default async function ProductPage({
 
           <div className="product-details-grid">
             <div>
-              <div className="product-detail-image">
-                <Image
-                  src={`/images/products/${prod.image}`}
-                  alt={prod.name}
-                  fill
-                  sizes="(max-width: 800px) 100vw, 48vw"
-                />
-              </div>
+              {prod.images ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  {prod.images.map((img, idx) => (
+                    <div className="product-detail-image" key={idx}>
+                      <Image
+                        src={`/images/products/${img}`}
+                        alt={`${prod.name} ${idx + 1}`}
+                        fill
+                        sizes="(max-width: 800px) 100vw, 48vw"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="product-detail-image">
+                  <Image
+                    src={`/images/products/${prod.image}`}
+                    alt={prod.name}
+                    fill
+                    sizes="(max-width: 800px) 100vw, 48vw"
+                  />
+                </div>
+              )}
               <a
                 className="quote-button"
                 href="mailto:sales@shreeindustrialheater.com?subject=Quote%20request"

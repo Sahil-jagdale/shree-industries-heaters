@@ -130,7 +130,8 @@ export default function Footer() {
               { name: "Ceramic Infrared Heater", href: "/products/ceramic-infrared-heater" },
               { name: "Roller Heater", href: "/products/roller-heater" },
               { name: "Furnace Heating Elements", href: "/products/furnace-heating-elements" },
-              { name: "Other Products", href: "/products/other-products" },
+              { name: "Porcelain Heater", href: "/products/porcelain-heater" },
+              { name: "Other Products", href: "/products" },
             ].map((item) => (
               <li
                 key={item.name}
