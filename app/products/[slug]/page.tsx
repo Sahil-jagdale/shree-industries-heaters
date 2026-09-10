@@ -1,9 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import RelatedProducts from "../../../components/RelatedProducts";
 import SubProductAccordion from "../../../components/SubProductAccordion";
 import ExpandableDescription from "../../../components/ExpandableDescription";
+import JsonLd from "../../../components/JsonLd";
 
 type Product = {
   name: string;
@@ -36,11 +38,14 @@ const products: Record<string, Product> = {
     name: "Roller Heater",
     image: "roller_heater1.png",
     description:
-      "Higher-capacity super roller heaters in swaged stainless-steel construction for industrial air-heating applications.",
+      "Shree Industries Super Roller Heaters are specialized, high-capacity industrial heating assemblies engineered specifically for uniform internal and surface heating of rotating cylinders, corrugation rolls, laminating drums, calendar rolls, and continuous web processing machinery. Constructed with a bundle of heavy-duty, swaged tubular heating elements fabricated from high-grade Stainless Steel (SS 304 / SS 316) or Incoloy sheathing, these heaters provide rapid heat transfer, exceptional mechanical strength, and rigorous vibration resistance under continuous industrial rotation.\n\nEach roller heating assembly features precision-wound 80/20 Nichrome resistance coils insulated with high-purity electro-fused Magnesium Oxide (MgO) compacted to high density via swaging. This ensures superior thermal conductivity, rapid thermal ramp-up, and zero hot-spots along the entire effective face length of the machine roller, directly preventing uneven processing, bubbling, or thermal distortion in paper, corrugated boards, textiles, and plastic films.\n\n<strong>Key Features & Numerical Specifications:</strong>\n• <strong>Tube Diameter & Element Geometry:</strong> Standard 10.5 mm outer diameter (OD) straight swaged heating elements bundled in a multi-element circular array (typically 9 straight heavy-duty elements) to deliver 360° balanced radial heat.\n• <strong>Machine Compatibility & Widths:</strong> Engineered for standard industrial machine widths including 42-inch (1067 mm), 45-inch (1143 mm), 52-inch (1321 mm), and 62-inch (1575 mm) rolls, with custom barrel lengths engineered on request up to 3000 mm.\n• <strong>Power & Electrical Ratings:</strong> Designed for standard 440V / 415V 3-phase industrial power supplies. High-output ratings range from 7.0 kW, 8.0 kW, 9.0 kW, 10.0 kW, 11.0 kW, 12.0 kW, up to 14.0 kW per roller assembly (custom ratings up to 24 kW available).\n• <strong>Operating Temperatures:</strong> Continuous operational sheath temperatures up to 600°C (1112°F) with surface uniformity maintained within ±3°C across the operational roller face.\n• <strong>Journal & Bearing Thermal Protection:</strong> Engineered with calibrated unheated cold ends at drive and non-drive shaft ends, protecting rotary unions, roll bearings, and slip-ring electrical assemblies from thermal degradation.\n• <strong>Dielectric Strength & Insulation:</strong> High-voltage breakdown tested to >2000V AC with cold insulation resistance exceeding 20 MΩ at 500V DC for maximum operational safety.\n\nThese heaters are widely utilized across corrugation box manufacturing, textile heat-setting stenters, plastic sheet laminators, rotogravure printing presses, and rubber processing drums, offering long service life and zero unplanned production halts.",
     features: [
-      "10.5 mm diameter, S.S. 304 construction",
-      "Nine straight air-heating elements",
-      "Built for dependable, high-capacity operation",
+      "Heavy-duty 10.5 mm diameter swaged SS 304 / SS 316 tubular construction",
+      "Nine-element radial bundle delivering uniform 360° circumferential heat",
+      "Calibrated for 42\", 45\", 52\", and 62\" machine roller widths",
+      "Power ratings from 7.0 kW up to 14.0 kW on 440V / 3-phase power",
+      "Sustained operating temperatures up to 600°C with ±3°C surface uniformity",
+      "Unheated cold zones engineered to protect rotary bearings and slip rings",
     ],
     specifications: [
       ["RHI/1701", "For 62 inch machine — 440V/3 phase — 14 kW"],
@@ -285,6 +290,49 @@ export function generateStaticParams() {
   return Object.keys(products).map((slug) => ({ slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products[slug];
+  if (!product) return {};
+
+  const cleanDesc = product.description
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 150);
+
+  return {
+    title: `${product.name} Manufacturer & Supplier | Shree Industries`,
+    description: `${cleanDesc}... Heavy duty engineering, fast dispatch across India. Request a quote.`,
+    alternates: {
+      canonical: `https://www.shreeindustriesheaters.com/products/${slug}`,
+    },
+    openGraph: {
+      title: `${product.name} Manufacturer & Supplier | Shree Industries`,
+      description: `${cleanDesc}... Heavy duty engineering, fast dispatch across India.`,
+      url: `https://www.shreeindustriesheaters.com/products/${slug}`,
+      images: [
+        {
+          url: `/images/products/${product.image}`,
+          width: 800,
+          height: 600,
+          alt: `${product.name} - Industrial Electric Heater - Shree Industries`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} | Shree Industries`,
+      description: `${cleanDesc}...`,
+      images: [`/images/products/${product.image}`],
+    },
+  };
+}
+
 export default async function ProductPage({
   params,
 }: {
@@ -293,6 +341,68 @@ export default async function ProductPage({
   const { slug } = await params;
   const product = products[slug];
   if (!product) notFound();
+
+  const cleanDescription = product.description
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 300);
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: `https://www.shreeindustriesheaters.com/images/products/${product.image}`,
+    description: cleanDescription,
+    category: "Industrial Heating Equipment",
+    brand: {
+      "@type": "Brand",
+      name: "Shree Industries",
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: "Shree Industries",
+      url: "https://www.shreeindustriesheaters.com",
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "INR",
+      price: "0",
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+      url: `https://www.shreeindustriesheaters.com/products/${slug}`,
+      seller: {
+        "@type": "Organization",
+        name: "Shree Industries",
+      },
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.shreeindustriesheaters.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: "https://www.shreeindustriesheaters.com/products",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+        item: `https://www.shreeindustriesheaters.com/products/${slug}`,
+      },
+    ],
+  };
 
   const specificationTable = (specifications: string[][], headers: string[] = ["Reference", "Specification"]) => (
     <div className="specification-table">
@@ -322,7 +432,7 @@ export default async function ProductPage({
     <div key={prod.name}>
       <section className="product-details section">
         <div className="container">
-          <Link className="back-link" href="/#products">
+          <Link className="back-link" href="/products">
             ← Back to products
           </Link>
           <h1>{prod.name}</h1>
@@ -335,8 +445,9 @@ export default async function ProductPage({
                     <div className="product-detail-image" key={idx}>
                       <Image
                         src={`/images/products/${img}`}
-                        alt={`${prod.name} ${idx + 1}`}
+                        alt={`${prod.name} view ${idx + 1} - Industrial Heater - Shree Industries`}
                         fill
+                        priority={idx === 0}
                         sizes="(max-width: 800px) 100vw, 48vw"
                       />
                     </div>
@@ -346,17 +457,19 @@ export default async function ProductPage({
                 <div className="product-detail-image">
                   <Image
                     src={`/images/products/${prod.image}`}
-                    alt={prod.name}
+                    alt={`${prod.name} - Industrial Electric Heating Element - Shree Industries`}
                     fill
+                    priority
                     sizes="(max-width: 800px) 100vw, 48vw"
                   />
                 </div>
               )}
               <a
                 className="quote-button"
-                href="mailto:sales@shreeindustrialheater.com?subject=Quote%20request"
+                href={`mailto:sales@shreeindustrialheater.com?subject=${encodeURIComponent(`Quote Request: ${prod.name}`)}`}
+                aria-label={`Request best quote for ${prod.name}`}
               >
-                Get best quote
+                Get Best Quote
               </a>
             </div>
             <div className="product-copy">
@@ -383,10 +496,16 @@ export default async function ProductPage({
 
   return (
     <main>
+      <JsonLd data={productJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <section className="product-page-hero">
         <div className="container">
           <p>
-            Products <span>/</span> {product.name}
+            <Link href="/" style={{ color: "inherit", textDecoration: "none" }}>Home</Link>
+            {" "}<span>/</span>{" "}
+            <Link href="/products" style={{ color: "inherit", textDecoration: "none" }}>Products</Link>
+            {" "}<span>/</span>{" "}
+            <strong>{product.name}</strong>
           </p>
         </div>
       </section>

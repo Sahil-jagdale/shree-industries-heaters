@@ -44,11 +44,11 @@ export default function HeroCarousel() {
       
       <div className="container hero-content-wrapper">
         <div className="hero-content-box">
-          <h1 className="hero-title">When Quality Matters</h1>
+          <h1 className="hero-title">
+            Industrial Heaters &amp; Custom Thermal Solutions Manufacturer
+          </h1>
           <p className="hero-subtitle">
-            Trust Shree Industries Heaters, your partner of choice for
-            high-quality industrial heaters, heating elements and heating
-            solutions.
+            Trust Shree Industries — ISO compliant manufacturer &amp; supplier of high-efficiency cartridge, immersion, tubular, band &amp; custom heating elements since 1994.
           </p>
         </div>
       </div>

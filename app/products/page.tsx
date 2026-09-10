@@ -70,10 +70,10 @@ export default function Products() {
           style={{ display: "flex", height: "100%", alignItems: "center" }}
         >
           <div className="products-hero-text">
-            <h1>ALL PRODUCTS</h1>
+            <h1>INDUSTRIAL HEATERS &amp; CUSTOM HEATING ELEMENTS</h1>
           </div>
           <div className="products-hero-carousel">
-            <button className="carousel-arrow left" onClick={prevSlide}>
+            <button className="carousel-arrow left" onClick={prevSlide} aria-label="Previous product slide">
               <i className="fa-solid fa-chevron-left"></i>
             </button>
 
@@ -84,14 +84,15 @@ export default function Products() {
               <div className="carousel-image-wrapper">
                 <Image
                   src={heroProducts[currentSlide].image}
-                  alt={heroProducts[currentSlide].name}
+                  alt={`${heroProducts[currentSlide].name} - Industrial Electric Heater - Shree Industries`}
                   fill
+                  priority
                   style={{ objectFit: "contain" }}
                 />
               </div>
             </div>
 
-            <button className="carousel-arrow right" onClick={nextSlide}>
+            <button className="carousel-arrow right" onClick={nextSlide} aria-label="Next product slide">
               <i className="fa-solid fa-chevron-right"></i>
             </button>
           </div>
@@ -129,18 +130,19 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/roller_heater1.png"
-                  alt="Roller Heater"
+                  alt="Industrial Roller Heater for Air Heating - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
                 <h3>ROLLER HEATER</h3>
                 <p>
-                  Roller heaters are compact heating devices designed for a
-                  variety of applications. Consisting of a cylindrical heating
-                  element enclosed within a protective casing, roller heaters
-                  are adept at evenly distributing heat across surfaces.
+                  High-capacity Super Roller Heaters built in swaged SS 304 / SS 316
+                  construction with multi-element radial assemblies (up to 14 kW, 440V)
+                  engineered for uniform 360° heating of corrugation drums, laminators,
+                  and industrial rotating rolls up to 600°C.
                 </p>
               </div>
             </div>
@@ -154,9 +156,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/ss-304-watter_heater.png"
-                  alt="Industrial Water Heater"
+                  alt="SS 304 Horizontal Industrial Water Heater - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -179,9 +182,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/emmersion_heaters1.png"
-                  alt="Immersion Heaters"
+                  alt="Industrial Immersion Heaters for Chemical and Water Tanks - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -204,9 +208,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/loadBank_heater.png"
-                  alt="Load Bank Heater"
+                  alt="Load Bank Heater for Electrical Load Testing - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -229,9 +234,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/high_density_cartridge_heater1.png"
-                  alt="Cartridge Heater"
+                  alt="High Density Cartridge Heater for Dies and Molds - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -254,9 +260,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/ceramic_band_heater.png"
-                  alt="Ceramic Band Heater"
+                  alt="High Temperature Ceramic Band Heater for Extruders - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -279,9 +286,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/ushaped_finned_heater1.png"
-                  alt="U-Shape Air Heater"
+                  alt="U-Shape Finned Tubular Air Heater for Industrial Ovens - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -304,9 +312,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/mica_band_heater_1.png"
-                  alt="Mica Band Heater"
+                  alt="Mica Band Heater for Plastic Injection Molding - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -329,9 +338,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/ceramic_infrared_heater.png"
-                  alt="Ceramic Infrared Heater"
+                  alt="Energy Efficient Ceramic Infrared Heater for Thermoforming - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -354,9 +364,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/runner_heater1.png"
-                  alt="Hot Runner Heater"
+                  alt="Hot Runner Heater for Plastic Molding Tooling - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -379,9 +390,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/heating-elements.png"
-                  alt="Furnace Heating Element"
+                  alt="High Temperature Furnace Heating Elements (Kanthal & Nichrome) - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -404,9 +416,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/porcelain-heater.png"
-                  alt="Porcelain Heater"
+                  alt="Porcelain Bobbin Heater for Indirect Fluid Heating - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">
@@ -429,9 +442,10 @@ export default function Products() {
               <div className="product-card-images">
                 <img
                   src="/images/products/other_products.png"
-                  alt="Other Products"
+                  alt="Custom Engineered Heating Elements and Control Panels - Shree Industries"
                   width="250"
                   height="250"
+                  loading="lazy"
                 />
               </div>
               <div className="product-card-info">

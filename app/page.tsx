@@ -1,5 +1,30 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import HeroCarousel from "../components/HeroCarousel";
+
+export const metadata: Metadata = {
+  title: "Industrial Heaters & Heating Elements Manufacturer | Shree Industries",
+  description:
+    "Leading manufacturer of custom industrial heaters, cartridge heaters, tubular elements, immersion and band heaters. ISO compliant. Request a quote today.",
+  alternates: {
+    canonical: "https://www.shreeindustriesheaters.com",
+  },
+  openGraph: {
+    title: "Industrial Heaters & Heating Elements Manufacturer | Shree Industries",
+    description:
+      "Leading manufacturer of custom industrial heaters, cartridge heaters, tubular elements, immersion and band heaters. ISO compliant. Request a quote today.",
+    url: "https://www.shreeindustriesheaters.com",
+    images: [
+      {
+        url: "/images/slider-main/bg1.png",
+        width: 1200,
+        height: 630,
+        alt: "Shree Industries - Industrial Heaters & Heating Elements Manufacturer",
+      },
+    ],
+  },
+};
+
 type Product = { name: string; image: string; href: string };
 type Application = { name: string; image: string };
 
@@ -183,10 +208,9 @@ export default function Home() {
 
       <section id="products" className="section products-section">
         <div className="container">
-          <SectionTitle>Our Product</SectionTitle>
+          <SectionTitle>Engineered Industrial Heaters &amp; Heating Elements</SectionTitle>
           <p className="section-lead">
-            Explore our range of efficient, dependable industrial heating
-            solutions.
+            Explore our comprehensive range of high-efficiency, dependable industrial electric heaters and heating elements.
           </p>
           <div className="product-grid">
             {products.map((product) => (
@@ -194,18 +218,20 @@ export default function Home() {
                 <a
                   className="product-image"
                   href={`/products/${product.href}`}
-                  aria-label={`View ${product.name} details`}
+                  aria-label={`View technical specifications for ${product.name}`}
                 >
                   <Image
                     src={`/images/products/${product.image}`}
-                    alt={product.name}
+                    alt={`${product.name} - Industrial Heating Element Manufacturer - Shree Industries`}
                     fill
+                    loading="lazy"
                     sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 25vw"
                   />
                 </a>
                 <a
                   className="product-card-button"
                   href={`/products/${product.href}`}
+                  aria-label={`View ${product.name} technical details`}
                 >
                   {product.name}
                   <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -216,36 +242,63 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="applications" className="section" style={{ backgroundColor: "#f8fafc", padding: "65px 0" }}>
+        <div className="container">
+          <SectionTitle>Industrial Applications &amp; Thermal Processing Sectors</SectionTitle>
+          <p className="section-lead">
+            Delivering robust thermal performance across heavy engineering, chemical plants, plastic processing, and industrial furnaces.
+          </p>
+          <div className="application-scroller">
+            <div className="application-track">
+              {[...applications, ...applications].map((app, idx) => (
+                <article className="application-card" key={`app-${idx}`}>
+                  <span>
+                    <Image
+                      src={`/images/our_product/${app.image}`}
+                      alt={`${app.name} - Industrial Thermal Application - Shree Industries`}
+                      fill
+                      sizes="310px"
+                      loading="lazy"
+                    />
+                  </span>
+                  <h3>{app.name}</h3>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section why-section">
         <div className="container narrow">
-          <SectionTitle>Why Us</SectionTitle>
+          <SectionTitle>Why Partner with Shree Industries</SectionTitle>
           <p style={{ marginBottom: "30px", fontSize: "1.1rem", color: "#555" }}>
-            As an industry leader in manufacturing industrial heating elements, Shree Industries stands out through our unwavering commitment to excellence. We partner with you to provide solutions that empower your business. Here is what we promise:
+            As an industry-leading manufacturer of industrial heating elements, Shree Industries combines 30+ years of thermal engineering experience with ISO-standard quality controls. Here is what we deliver:
           </p>
           <div className="why-us-grid">
             <div style={{ padding: "20px", backgroundColor: "#f8f9fa", borderRadius: "8px", borderLeft: "4px solid #0066cc" }}>
               <h4 style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px", color: "#333" }}>
-                <i className="fa-solid fa-check-circle" style={{ color: "#0066cc" }}></i> Uncompromising Quality
+                <i className="fa-solid fa-check-circle" style={{ color: "#0066cc" }}></i> Uncompromising Quality &amp; 100% Testing
               </h4>
-              <p style={{ margin: 0, color: "#666", fontSize: "0.95rem" }}>Every heater undergoes rigorous testing to ensure it meets our strict quality-assurance protocols, delivering unparalleled reliability for your operations.</p>
+              <p style={{ margin: 0, color: "#666", fontSize: "0.95rem" }}>Every heater undergoes rigorous testing including high-voltage flash tests and insulation resistance verification to ensure zero defects on arrival.</p>
             </div>
             <div style={{ padding: "20px", backgroundColor: "#f8f9fa", borderRadius: "8px", borderLeft: "4px solid #0066cc" }}>
               <h4 style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px", color: "#333" }}>
-                <i className="fa-solid fa-tags" style={{ color: "#0066cc" }}></i> Competitive Pricing
+                <i className="fa-solid fa-tags" style={{ color: "#0066cc" }}></i> Competitive Direct-Manufacturer Pricing
               </h4>
-              <p style={{ margin: 0, color: "#666", fontSize: "0.95rem" }}>We optimize our manufacturing processes to offer you highly competitive, cost-effective rates without ever sacrificing the quality of our materials.</p>
+              <p style={{ margin: 0, color: "#666", fontSize: "0.95rem" }}>Direct factory-to-industry supply ensures optimum cost-effectiveness without intermediaries or quality compromise.</p>
             </div>
             <div style={{ padding: "20px", backgroundColor: "#f8f9fa", borderRadius: "8px", borderLeft: "4px solid #0066cc" }}>
               <h4 style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px", color: "#333" }}>
-                <i className="fa-solid fa-truck-fast" style={{ color: "#0066cc" }}></i> Bulk & Urgent Deliveries
+                <i className="fa-solid fa-truck-fast" style={{ color: "#0066cc" }}></i> Scalable Production &amp; Rapid Dispatch
               </h4>
-              <p style={{ margin: 0, color: "#666", fontSize: "0.95rem" }}>With scalable production capabilities, we guarantee prompt delivery for bulk orders and urgent customized requirements to keep your business running smoothly.</p>
+              <p style={{ margin: 0, color: "#666", fontSize: "0.95rem" }}>High-capacity tooling and automated winding equipment allow prompt dispatch for bulk orders and urgent replacement requirements across India.</p>
             </div>
             <div style={{ padding: "20px", backgroundColor: "#f8f9fa", borderRadius: "8px", borderLeft: "4px solid #0066cc" }}>
               <h4 style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px", color: "#333" }}>
-                <i className="fa-solid fa-gears" style={{ color: "#0066cc" }}></i> Custom Engineering
+                <i className="fa-solid fa-gears" style={{ color: "#0066cc" }}></i> Custom Thermal Engineering &amp; Prototyping
               </h4>
-              <p style={{ margin: 0, color: "#666", fontSize: "0.95rem" }}>Beyond standard products, our expert team works closely with you to design and engineer bespoke heating solutions tailored perfectly to your unique needs.</p>
+              <p style={{ margin: 0, color: "#666", fontSize: "0.95rem" }}>We fabricate custom wattages, specialized sheath alloys (SS304, SS316, Incoloy, Titanium), and exact geometries matching your engineering drawings.</p>
             </div>
           </div>
         </div>
@@ -254,7 +307,7 @@ export default function Home() {
       <section className="vendors-section" style={{ padding: "60px 0", backgroundColor: "#ffffff", overflow: "hidden", borderTop: "1px solid #eaeaea", borderBottom: "1px solid #eaeaea" }}>
         <div className="container">
           <h2 style={{ textAlign: "center", fontFamily: "Montserrat, sans-serif", fontSize: "24px", fontWeight: "700", color: "#1e2934", marginBottom: "40px", textTransform: "uppercase" }}>
-            Our Trusted Vendors
+            Trusted by Leading Industrial Enterprises
           </h2>
           <style>{`
             .marquee-wrapper {

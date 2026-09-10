@@ -1,13 +1,58 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import "./about.css";
+import JsonLd from "../../components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "About Us — Industrial Heaters Manufacturer",
+  description:
+    "Learn about Shree Industries: 30+ years of thermal engineering, in-house R&D, advanced testing facilities, and nationwide industrial heating supply.",
+  alternates: {
+    canonical: "https://www.shreeindustriesheaters.com/about-us",
+  },
+  openGraph: {
+    title: "About Us | Industrial Heaters Manufacturer | Shree Industries",
+    description:
+      "Learn about Shree Industries: 30+ years of thermal engineering, in-house R&D, advanced testing facilities, and nationwide industrial heating supply.",
+    url: "https://www.shreeindustriesheaters.com/about-us",
+    images: [
+      {
+        url: "/images/about_collage.png",
+        width: 800,
+        height: 600,
+        alt: "About Shree Industries Team & Manufacturing",
+      },
+    ],
+  },
+};
+
+const aboutBreadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.shreeindustriesheaters.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About Us",
+      item: "https://www.shreeindustriesheaters.com/about-us",
+    },
+  ],
+};
 
 export default function AboutUs() {
   return (
     <main>
+      <JsonLd data={aboutBreadcrumbs} />
       <section className="about-hero">
         <div className="container">
           <div className="about-hero-text">
-            <h1>ABOUT US</h1>
+            <h1>ABOUT SHREE INDUSTRIES — INDUSTRIAL HEATERS MANUFACTURER</h1>
             <p>
               <strong>Shree Industries</strong> is among top rated manufacturers
               and suppliers of Industrial Heaters. Based out of Chhatrapati
@@ -36,7 +81,7 @@ export default function AboutUs() {
           >
             <Image
               src="/images/about_laptop.png"
-              alt="Industrial Heating Solutions"
+              alt="Shree Industries Engineering Design and Industrial Heater Manufacturing"
               width={450}
               height={450}
               style={{ objectFit: "contain" }}

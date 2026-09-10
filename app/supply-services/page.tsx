@@ -214,7 +214,7 @@ export default function SupplyServicesPage() {
           style={{ display: "flex", height: "100%", alignItems: "center" }}
         >
           <div className="supply-hero-text">
-            <h1>SUPPLY & SERVICES</h1>
+            <h1>SUPPLY PRODUCTS &amp; INDUSTRIAL SERVICES</h1>
             <p>
               Leading supplier of high-temperature furnaces, industrial ovens,
               heating elements, electrical control panels, and turnkey automation services.
@@ -236,7 +236,7 @@ export default function SupplyServicesPage() {
               <div className="supply-carousel-image-wrapper">
                 <Image
                   src={heroItems[currentSlide].image}
-                  alt={heroItems[currentSlide].name}
+                  alt={`${heroItems[currentSlide].name} - Shree Industries Supply & Services`}
                   fill
                   style={{ objectFit: "contain" }}
                 />

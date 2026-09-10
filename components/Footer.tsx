@@ -37,25 +37,27 @@ export default function Footer() {
           </p>
           <div style={{ display: "flex", gap: "15px" }}>
             <a
-              href="#"
-              aria-label="Facebook"
+              href="mailto:sales@shreeindustrialheater.com"
+              aria-label="Email Shree Industries"
               style={{ color: "#ffffff", fontSize: "16px" }}
             >
-              <i className="fab fa-facebook-f"></i>
+              <i className="fa-regular fa-envelope"></i>
             </a>
             <a
-              href="#"
-              aria-label="LinkedIn"
+              href="tel:+919096258317"
+              aria-label="Call Shree Industries"
               style={{ color: "#ffffff", fontSize: "16px" }}
             >
-              <i className="fab fa-linkedin-in"></i>
+              <i className="fa-solid fa-phone"></i>
             </a>
             <a
-              href="#"
-              aria-label="Instagram"
+              href="https://maps.google.com/?q=Waluj+MIDC+Chhatrapati+Sambhaji+Nagar"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Google Maps Location of Shree Industries"
               style={{ color: "#ffffff", fontSize: "16px" }}
             >
-              <i className="fab fa-instagram"></i>
+              <i className="fa-solid fa-location-dot"></i>
             </a>
           </div>
         </div>
@@ -131,7 +133,7 @@ export default function Footer() {
               { name: "Roller Heater", href: "/products/roller-heater" },
               { name: "Furnace Heating Elements", href: "/products/furnace-heating-elements" },
               { name: "Porcelain Heater", href: "/products/porcelain-heater" },
-              { name: "Other Products", href: "/products" },
+              { name: "Other Products", href: "/products/other-products" },
             ].map((item) => (
               <li
                 key={item.name}
