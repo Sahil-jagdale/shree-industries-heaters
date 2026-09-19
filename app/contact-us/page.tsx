@@ -205,7 +205,7 @@ export default function ContactUs() {
                     id="name"
                     name="Name"
                     required
-                    placeholder="e.g. John Doe / Acme Engineering Ltd."
+                    placeholder="Enter Company Name"
                   />
                 </div>
 
@@ -216,7 +216,7 @@ export default function ContactUs() {
                     id="email"
                     name="Email"
                     required
-                    placeholder="e.g. procurement@company.com"
+                    placeholder="Enter Your Email Id"
                   />
                 </div>
 
@@ -226,7 +226,7 @@ export default function ContactUs() {
                     type="tel"
                     id="phone"
                     name="Phone"
-                    placeholder="+91 98765 43210"
+                    placeholder="Enter Your Mobile Number"
                   />
                 </div>
 
@@ -253,7 +253,7 @@ export default function ContactUs() {
                     name="Message"
                     rows={5}
                     required
-                    placeholder="Specify dimensions (OD, length), voltage, wattage, sheath material, operating temperature, and quantities..."
+                    placeholder="Message ..."
                   ></textarea>
                 </div>
 
