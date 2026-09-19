@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Leading manufacturer of custom industrial heaters, cartridge heaters, tubular elements, immersion and band heaters. ISO compliant. Request a quote today.",
   alternates: {
-    canonical: "https://www.shreeindustriesheaters.com",
+    canonical: "https://shreeindustriesheaters.com",
   },
   openGraph: {
     title: "Industrial Heaters & Heating Elements Manufacturer | Shree Industries",
     description:
       "Leading manufacturer of custom industrial heaters, cartridge heaters, tubular elements, immersion and band heaters. ISO compliant. Request a quote today.",
-    url: "https://www.shreeindustriesheaters.com",
+    url: "https://shreeindustriesheaters.com",
     images: [
       {
         url: "/images/slider-main/bg1.png",

@@ -309,12 +309,12 @@ export async function generateMetadata({
     title: `${product.name} Manufacturer & Supplier | Shree Industries`,
     description: `${cleanDesc}... Heavy duty engineering, fast dispatch across India. Request a quote.`,
     alternates: {
-      canonical: `https://www.shreeindustriesheaters.com/products/${slug}`,
+      canonical: `https://shreeindustriesheaters.com/products/${slug}`,
     },
     openGraph: {
       title: `${product.name} Manufacturer & Supplier | Shree Industries`,
       description: `${cleanDesc}... Heavy duty engineering, fast dispatch across India.`,
-      url: `https://www.shreeindustriesheaters.com/products/${slug}`,
+      url: `https://shreeindustriesheaters.com/products/${slug}`,
       images: [
         {
           url: `/images/products/${product.image}`,
@@ -352,7 +352,7 @@ export default async function ProductPage({
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    image: `https://www.shreeindustriesheaters.com/images/products/${product.image}`,
+    image: `https://shreeindustriesheaters.com/images/products/${product.image}`,
     description: cleanDescription,
     category: "Industrial Heating Equipment",
     brand: {
@@ -362,7 +362,7 @@ export default async function ProductPage({
     manufacturer: {
       "@type": "Organization",
       name: "Shree Industries",
-      url: "https://www.shreeindustriesheaters.com",
+      url: "https://shreeindustriesheaters.com",
     },
     offers: {
       "@type": "Offer",
@@ -371,7 +371,7 @@ export default async function ProductPage({
       priceValidUntil: "2027-12-31",
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
-      url: `https://www.shreeindustriesheaters.com/products/${slug}`,
+      url: `https://shreeindustriesheaters.com/products/${slug}`,
       seller: {
         "@type": "Organization",
         name: "Shree Industries",
@@ -387,19 +387,19 @@ export default async function ProductPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.shreeindustriesheaters.com",
+        item: "https://shreeindustriesheaters.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Products",
-        item: "https://www.shreeindustriesheaters.com/products",
+        item: "https://shreeindustriesheaters.com/products",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: product.name,
-        item: `https://www.shreeindustriesheaters.com/products/${slug}`,
+        item: `https://shreeindustriesheaters.com/products/${slug}`,
       },
     ],
   };

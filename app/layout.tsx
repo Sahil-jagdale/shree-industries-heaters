@@ -6,7 +6,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import JsonLd from "../components/JsonLd";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.shreeindustriesheaters.com"),
+  metadataBase: new URL("https://shreeindustriesheaters.com"),
   title: {
     default: "Industrial Heaters & Heating Elements Manufacturer | Shree Industries",
     template: "%s | Shree Industries",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://www.shreeindustriesheaters.com",
+    url: "https://shreeindustriesheaters.com",
     siteName: "Shree Industries Heaters",
     title: "Industrial Heaters & Heating Elements Manufacturer | Shree Industries",
     description:
@@ -70,7 +70,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/icon.png", sizes: "512x512", type: "image/png" },
     ],
     apple: [
@@ -78,6 +81,7 @@ export const metadata: Metadata = {
     ],
     shortcut: "/favicon.ico",
   },
+  manifest: "/site.webmanifest",
 };
 
 const organizationSchema = {
@@ -85,16 +89,16 @@ const organizationSchema = {
   "@graph": [
     {
       "@type": ["Manufacturer", "LocalBusiness", "Organization"],
-      "@id": "https://www.shreeindustriesheaters.com/#organization",
+      "@id": "https://shreeindustriesheaters.com/#organization",
       "name": "Shree Industries",
       "alternateName": ["Shree Industries Heaters", "Shree Industrial Heaters"],
-      "url": "https://www.shreeindustriesheaters.com",
+      "url": "https://shreeindustriesheaters.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.shreeindustriesheaters.com/images/logo.jpg",
+        "url": "https://shreeindustriesheaters.com/images/logo.jpg",
         "caption": "Shree Industries Logo",
       },
-      "image": "https://www.shreeindustriesheaters.com/images/slider-main/bg1.png",
+      "image": "https://shreeindustriesheaters.com/images/slider-main/bg1.png",
       "description":
         "Premier Indian manufacturer and exporter of custom industrial electric heaters, cartridge heaters, tubular heating elements, immersion heaters, band heaters, and furnace equipment since 1994.",
       "telephone": "+91-9096258317",
@@ -132,11 +136,11 @@ const organizationSchema = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.shreeindustriesheaters.com/#website",
-      "url": "https://www.shreeindustriesheaters.com",
+      "@id": "https://shreeindustriesheaters.com/#website",
+      "url": "https://shreeindustriesheaters.com",
       "name": "Shree Industries",
       "publisher": {
-        "@id": "https://www.shreeindustriesheaters.com/#organization",
+        "@id": "https://shreeindustriesheaters.com/#organization",
       },
     },
   ],

@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "Learn about Shree Industries: 30+ years of thermal engineering, in-house R&D, advanced testing facilities, and nationwide industrial heating supply.",
   alternates: {
-    canonical: "https://www.shreeindustriesheaters.com/about-us",
+    canonical: "https://shreeindustriesheaters.com/about-us",
   },
   openGraph: {
     title: "About Us | Industrial Heaters Manufacturer | Shree Industries",
     description:
       "Learn about Shree Industries: 30+ years of thermal engineering, in-house R&D, advanced testing facilities, and nationwide industrial heating supply.",
-    url: "https://www.shreeindustriesheaters.com/about-us",
+    url: "https://shreeindustriesheaters.com/about-us",
     images: [
       {
         url: "/images/about_collage.png",
@@ -34,13 +34,13 @@ const aboutBreadcrumbs = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.shreeindustriesheaters.com",
+      item: "https://shreeindustriesheaters.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "About Us",
-      item: "https://www.shreeindustriesheaters.com/about-us",
+      item: "https://shreeindustriesheaters.com/about-us",
     },
   ],
 };

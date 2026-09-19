@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Contact Shree Industries for custom industrial heating inquiries, technical drawings, pricing, and fast dispatch across Maharashtra and India.",
   alternates: {
-    canonical: "https://www.shreeindustriesheaters.com/contact-us",
+    canonical: "https://shreeindustriesheaters.com/contact-us",
   },
   openGraph: {
     title: "Request a Quote | Contact Shree Industries Industrial Heaters",
     description:
       "Contact Shree Industries for custom industrial heating inquiries, technical drawings, pricing, and fast dispatch across Maharashtra and India.",
-    url: "https://www.shreeindustriesheaters.com/contact-us",
+    url: "https://shreeindustriesheaters.com/contact-us",
     images: [
       {
         url: "/images/slider-main/bg1.png",
@@ -33,13 +33,13 @@ const contactBreadcrumbs = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.shreeindustriesheaters.com",
+      item: "https://shreeindustriesheaters.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Contact Us",
-      item: "https://www.shreeindustriesheaters.com/contact-us",
+      item: "https://shreeindustriesheaters.com/contact-us",
     },
   ],
 };
