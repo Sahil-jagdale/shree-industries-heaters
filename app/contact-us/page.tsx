@@ -151,8 +151,8 @@ export default function ContactUs() {
                   <div className="contact-text">
                     <h3>Direct Sales Email</h3>
                     <p>
-                      <a href="mailto:sales@shreeindustrialheater.com">
-                        sales@shreeindustrialheater.com
+                      <a href="mailto:sale@shreeindustriesheaters.com">
+                        sale@shreeindustriesheaters.com
                       </a>
                     </p>
                   </div>
@@ -163,7 +163,7 @@ export default function ContactUs() {
                 <h3>Connect With Us</h3>
                 <div className="social-links">
                   <a
-                    href="mailto:sales@shreeindustrialheater.com"
+                    href="mailto:sale@shreeindustriesheaters.com"
                     className="social-icon"
                     aria-label="Email Shree Industries"
                   >
@@ -193,7 +193,7 @@ export default function ContactUs() {
             <div className="contact-form-panel">
               <h2>Send a Request for Quotation (RFQ)</h2>
               <form
-                action="mailto:sales@shreeindustrialheater.com"
+                action="mailto:sale@shreeindustriesheaters.com"
                 method="post"
                 encType="text/plain"
                 className="contact-form"

@@ -466,7 +466,7 @@ export default async function ProductPage({
               )}
               <a
                 className="quote-button"
-                href={`mailto:sales@shreeindustrialheater.com?subject=${encodeURIComponent(`Quote Request: ${prod.name}`)}`}
+                href={`mailto:sale@shreeindustriesheaters.com?subject=${encodeURIComponent(`Quote Request: ${prod.name}`)}`}
                 aria-label={`Request best quote for ${prod.name}`}
               >
                 Get Best Quote

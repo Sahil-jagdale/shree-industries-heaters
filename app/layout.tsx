@@ -68,6 +68,16 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
 };
 
 const organizationSchema = {
@@ -88,7 +98,7 @@ const organizationSchema = {
       "description":
         "Premier Indian manufacturer and exporter of custom industrial electric heaters, cartridge heaters, tubular heating elements, immersion heaters, band heaters, and furnace equipment since 1994.",
       "telephone": "+91-9096258317",
-      "email": "sales@shreeindustrialheater.com",
+      "email": "sale@shreeindustriesheaters.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress":

@@ -17,11 +17,11 @@ export default function Header() {
         <div className="container topbar-content">
           <a
             className="topbar-email"
-            href="mailto:sales@shreeindustrialheater.com"
+            href="mailto:sale@shreeindustriesheaters.com"
             aria-label="Email Shree Industries Heaters"
           >
             <i className="fa-regular fa-envelope" aria-hidden="true"></i>
-            <span>sales@shreeindustrialheater.com</span>
+            <span>sale@shreeindustriesheaters.com</span>
           </a>
           <span>☎ +91 9096258317 / 8956412020</span>
           <Link href="/contact-us" className="enquiry-btn">Get Enquiry</Link>

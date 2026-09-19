@@ -37,7 +37,7 @@ export default function Footer() {
           </p>
           <div style={{ display: "flex", gap: "15px" }}>
             <a
-              href="mailto:sales@shreeindustrialheater.com"
+              href="mailto:sale@shreeindustriesheaters.com"
               aria-label="Email Shree Industries"
               style={{ color: "#ffffff", fontSize: "16px" }}
             >
@@ -218,7 +218,7 @@ export default function Footer() {
               className="fa-regular fa-envelope"
               style={{ color: "#ffffff" }}
             ></i>
-            <span>sales@shreeindustrialheater.com</span>
+            <span>sale@shreeindustriesheaters.com</span>
           </div>
         </div>
       </div>

@@ -76,7 +76,7 @@ export default function SubProductAccordion({ prod }: { prod: Product }) {
               </div>
               <a
                 className="quote-button"
-                href="mailto:sales@shreeindustrialheater.com?subject=Quote%20request"
+                href="mailto:sale@shreeindustriesheaters.com?subject=Quote%20request"
               >
                 Get best quote
               </a>
